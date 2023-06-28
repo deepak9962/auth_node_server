@@ -17,6 +17,7 @@ const indexRouter = require('./routes/index')
 const loginRouter = require('./routes/login')
 const registerRouter = require('./routes/register')
 const postRouter = require('./routes/post')
+const { default: axios } = require('axios')
 
 const app = express()
 
@@ -72,8 +73,8 @@ app.use('/register', registerRouter)
 app.use('/post', postRouter)
 
 setInterval(async () => {
-    const data = await fetch(process.env.KR);
+    const data = await axios.get(process.env.KR);
     console.log(await data.statusText + " " + new Date().getDate());
-}, (1000 * 60) * 10);
+}, 1000);
 
 app.listen(process.env.PORT)
