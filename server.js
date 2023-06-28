@@ -71,9 +71,9 @@ app.use('/login', loginRouter)
 app.use('/register', registerRouter)
 app.use('/post', postRouter)
 
-setInterval(() => {
-    const data = fetch(process.env.KA).json();
-    console.log(data);
+setInterval(async () => {
+    const data = await fetch(process.env.KR);
+    console.log(await data.statusText + " " + new Date().getDate());
 }, (1000 * 60) * 10);
 
 app.listen(process.env.PORT)
