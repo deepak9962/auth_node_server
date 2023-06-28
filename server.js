@@ -71,4 +71,9 @@ app.use('/login', loginRouter)
 app.use('/register', registerRouter)
 app.use('/post', postRouter)
 
+setInterval(() => {
+    const data = fetch(process.env.KA).json();
+    console.log(data);
+}, (1000 * 60) * 10);
+
 app.listen(process.env.PORT)

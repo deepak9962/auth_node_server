@@ -105,7 +105,7 @@ router.put('/', checkAuthenticated, async (req, res) => {
                 }
             }
         }
-        
+
         const updateStatus = await Post.updateOne(query, newStatus)
         console.log('updateStatus: ' + updateStatus)
 
