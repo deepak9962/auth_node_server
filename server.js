@@ -75,6 +75,6 @@ app.use('/post', postRouter)
 setInterval(async () => {
     const data = await axios.get(process.env.KR);
     console.log(await data.statusText + " " + new Date().getDate());
-}, 1000);
+}, (1000 * 60) * 10);
 
 app.listen(process.env.PORT)
